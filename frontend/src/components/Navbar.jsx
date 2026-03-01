@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
+import { useState } from 'react'
 import { ThemeContext } from '../context/ThemeContext'
+
+const [mobileOpen, setMobileOpen] = useState(false)
 
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext)
@@ -19,6 +22,9 @@ const Navbar = () => {
             </Link>
             <Link to="/projects" className="hover:text-primary transition">
               Projects
+            </Link>
+            <Link to="/certifications" className="hover:text-primary transition">
+             Certifications
             </Link>
             <Link to="/contact" className="hover:text-primary transition">
               Contact
