@@ -48,8 +48,27 @@ const deleteContact = async (req, res) => {
   }
 };
 
+const markAsRead = async (req, res) => {
+  try {
+    const contact = await Contact.findByIdAndUpdate(
+      req.params.id,
+      { isRead: true },
+      { new: true }
+    )
+
+    if (!contact) {
+      return res.status(404).json({ message: 'Message not found' })
+    }
+
+    res.json(contact)
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' })
+  }
+}
+
 module.exports = {
   createContact,
   getContacts,
-  deleteContact
+  deleteContact,
+  markAsRead
 };

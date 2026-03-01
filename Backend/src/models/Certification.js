@@ -15,6 +15,9 @@ const certificationSchema = new mongoose.Schema(
       type: Date,
       required: true
     },
+    image: {
+       type: String
+    },
     credentialId: {
       type: String
     },
