@@ -1,11 +1,13 @@
+import Hero from "../components/hero/hero"
+import ServicesAbout from "../components/services/ServicesAbout"
+
 const Home = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-primary dark:text-white">
-        Welcome to Amar Portfolio
-      </h1>
-    </div>
-  )
+    <>
+      <Hero />
+      <ServicesAbout />
+    </>
+  ) 
 }
 
 export default Home

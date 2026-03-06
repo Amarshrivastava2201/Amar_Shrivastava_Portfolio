@@ -7,8 +7,26 @@ import AdminLogin from './pages/AdminLogin'
 import AdminDashboard from './pages/AdminDashboard'
 import Certifications from './pages/Certifications'
 import ProtectedRoute from './routes/ProtectedRoute'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 
 function App() {
+  const location = useLocation()
+
+useEffect(() => {
+  const path = location.pathname
+
+  const titles = {
+    '/': 'Amar Shrivastava | Full Stack Developer',
+    '/projects': 'Projects | Amar Shrivastava',
+    '/certifications': 'Certifications | Amar Shrivastava',
+    '/contact': 'Contact | Amar Shrivastava',
+    '/admin/login': 'Admin Login',
+    '/admin/dashboard': 'Admin Dashboard'
+  }
+
+  document.title = titles[path] || 'Amar Shrivastava'
+}, [location])
   return (
     <MainLayout>
       <Routes>
