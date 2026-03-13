@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import FloatingIcons from "./floatingIcons"
 
 const roles = [
   "Frontend Engineer",
@@ -25,10 +26,16 @@ const Hero = () => {
   }, [])
 
   return (
+    
     <section className="min-h-screen flex items-center bg-gray-50 dark:bg-slate-900">
       <div className="max-w-6xl mx-auto px-6 w-full">
         <div className="max-w-2xl">
 
+          <section className="relative overflow-hidden">
+              <FloatingIcons />
+
+                <div className="max-w-6xl mx-auto px-6">
+    
           {/* Name */}
           <p className="text-lg tracking-wide text-gray-500 dark:text-gray-400 mb-4 italic">
             Hey there!! It's Amar Shrivastava
@@ -67,6 +74,9 @@ const Hero = () => {
               Contact Me
             </Link>
           </div>
+
+  </div>
+</section>
 
         </div>
       </div>

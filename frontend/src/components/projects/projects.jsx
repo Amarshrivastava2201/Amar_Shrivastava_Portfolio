@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { fetchProjects } from "../../services/projectService"
+import ProjectCard from "./projectCard"
 
 const Projects = () => {
 
@@ -54,87 +55,12 @@ const closeProject = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {projects.map((project) => (
-
-            <div
-              key={project._id}
-              className="group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-lg transition-all duration-300"
-            >
-
-              {/* Image */}
-              {project.image && (
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
-                />
-              )}
-
-              <div className="p-6">
-
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  {project.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-
-                <button onClick={() => openProject(project)} className="text-indigo-600 text-sm hover:underline mb-4">See more...
-                </button>
-
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-4">
-
-                  {project.techStack?.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="text-xs px-2 py-1 bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-300 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-
-                </div>
-
-                {/* Buttons */}
-                <div className="flex gap-3">
-
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-indigo-600 hover:underline"
-                    >
-                      Live Demo
-                    </a>
-                  )}
-
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:underline"
-                    >
-                      GitHub
-                    </a>
-                  )}
-
-                </div>
-
-              </div>
-            </div>
-
-          ))}
-
-        </div>
+             <ProjectCard key={project._id} project={project} />
+            ))}
+</div>
 
         {selectedProject && (
-  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center overflow-y-auto z-50 px-4">
     
     <div className="bg-white dark:bg-slate-900 rounded-xl max-w-2xl w-full p-8 relative">
 
