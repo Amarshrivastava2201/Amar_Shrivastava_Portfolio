@@ -103,7 +103,7 @@ const ProjectCard = ({ project }) => {
                 )}
 
                 {/* Full description */}
-                <p className="text-gray-600 dark:text-gray-400 whitespace-pre-wrap leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 whitespace-pre-wrap break-all leading-relaxed">
                   {project.description}
                 </p>
 
