@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react'
 import { fetchProjects } from '../services/projectService'
-import ProjectCard from '../components/projects/projectCard'
+import ProjectCard from '../components/projects/projectCard.jsx'
 
 const Projects = () => {
   const [projects, setProjects] = useState([])
