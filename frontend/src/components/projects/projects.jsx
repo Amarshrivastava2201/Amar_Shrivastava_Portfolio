@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { fetchProjects } from "../../services/projectService"
-import ProjectCard from "./projectCard"
+import ProjectCard from "./ProjectCard"
 
 const Projects = () => {
 
